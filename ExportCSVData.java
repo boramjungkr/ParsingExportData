@@ -51,7 +51,7 @@ public class ExportCSVData {
 	System.out.println("How many countries export " + exportItem + ": " + num);
     }
     
-    //print countries exporting total amount over $999,999,999,999
+    //print countries exporting total amount over $999,999,999
     public void bigExporters(CSVParser parser, String amount){
         String totalAmount = "$999,999,999";   
         for(CSVRecord record : parser){
