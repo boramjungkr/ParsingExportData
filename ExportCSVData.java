@@ -13,15 +13,17 @@ import org.apache.commons.csv.*;
 
 public class ExportCSVData {
     public void countryInfo(CSVParser parser, String country){
+        boolean found = false;
         for(CSVRecord record : parser){
             //look at the "Country" column
             String getCountry = record.get("Country");
             //check if it contains country info
             if(getCountry.contains(country)){
-                String export = record.get("Exports");
-                System.out.println(getCountry + " : " + export);
-            }
-        }
+                System.out.println(getCountry + " : " 
+                +record.get("Exports")+" : "+record.get("Value (dollars)"));
+                found = true;
+            } 
+        }if (!found) System.out.println("NOT FOUND");
     }
     
     
